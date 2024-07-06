@@ -31,7 +31,7 @@ cp -R .config ~/
 
 read -n1 -rep "Do you want to install sddm?" SDDM
 if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
-    yay -S sddm
+    yay -S --noconfirm sddm
     systemctl enable sddm.service 
     systemctl start sddm.service 
 
