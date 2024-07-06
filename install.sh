@@ -3,8 +3,15 @@ echo "Welcome to Voidarium Installer"
 
 USERNAME=$(whoami)
 
+sudo pacman -Syu
+
+if ! command -v git >/dev/null 2>&1;then
+    echo "git does not exist!"
+    echo "Installing git..."
+    sudo pacman -S --noconfirm git
+fi
+
 if ! command -v yay >/dev/null 2>&1;then
-    sudo pacman -Syu
     echo "yay does not exist!"
     echo "Installing yay..."
     git clone https://aur.archlinux.org/yay-bin.git yay-bin
