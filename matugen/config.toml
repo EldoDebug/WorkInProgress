@@ -14,14 +14,21 @@ output_path = '~/.config/hypr/colors.conf'
 input_path = '~/.config/matugen/templates/voidarium.theme.css'
 output_path = '~/.config/vesktop/themes/voidarium.theme.css'
 
-[templates.gradience]
-input_path = '~/.config/matugen/templates/gradience.json'
-output_path = '~/.cache/voidarium/gradience.json'
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
 
 [templates.vscode]
 input_path = '~/.config/matugen/templates/vscode.json'
 output_path = '~/.cache/voidarium/vscode.json'
 
 [config]
-reload_apps = false
+reload_apps = true
 set_wallpaper = false
+
+[config.reload_apps_list]
+gtk_theme = true

@@ -35,10 +35,11 @@ cd "$(xdg-user-dir PICTURES)" || return 1
 # Restart ags
 $(ags -q; ags)
 
-# Apply gtk theme
-$(gradience-cli apply -p ~/.cache/voidarium/gradience.json --gtk both)
+# Kill Nutilus
+$(nautilus -q)
 
 # Set gtk theme
+gsettings set org.gnome.desktop.interface gtk-theme ''
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
