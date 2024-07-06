@@ -1,0 +1,21 @@
+[window]
+opacity = 0
+
+[shell]
+program = "fish"
+
+[window.padding]
+x = 12
+y = 12
+
+[font.italic]
+family = "Consolas"
+style = "Light Italic"
+
+[font.normal]
+family = "Consolas"
+style = "Regular"
+
+[font.bold]
+family = "Consolas"
+style = "Bold"
