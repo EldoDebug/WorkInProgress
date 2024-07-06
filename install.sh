@@ -26,7 +26,7 @@ echo "Downloading the required package..."
 yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk \
     xdg-desktop-portal-hyprland gnome-control-center polkit-gnome \
     gnome-keyring \
-    ffmpeg resources swww matugen-bin adw-gtk3 aylurs-gtk-shell \
+    ffmpeg resources swww matugen-bin adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
     jq grim slurp wl-clipboard libnotify hyprpicker dart-sass yad \
     bc hyprlock cliphist fish fastfetch python-pywal \
     nautilus nautilus-open-any-terminal vesktop-bin \
@@ -36,11 +36,10 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk \
 echo "Copying .config folder..."
 cp -R .config ~/
 
-read -n1 -rep "Do you want to install sddm?" SDDM
+read -n1 -rep "Do you want to install sddm? (y/n)" SDDM
 if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
     yay -S --noconfirm sddm
     systemctl enable sddm.service 
-    systemctl start sddm.service 
 
     read -n1 -rep "Do you want to make it AutoLogin?" AUTOLOGIN 
     if [[ $AUTOLOGIN == "Y" || $AUTOLOGIN == "y" ]]; then
@@ -51,8 +50,8 @@ if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
     fi   
 fi
 
-echo "Do you want to install a transparent vscode? (y/n)"
-read -n1 -rep "*Installation will take some time" CODE
+echo "Do you want to install a transparent vscode?"
+read -n1 -rep "*Installation will take some time (y/n)" CODE
 
 if [[ $CODE == "Y" || $CODE == "y" ]]; then
     yay -S --noconfirm code-translucent

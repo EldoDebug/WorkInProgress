@@ -1,5 +1,5 @@
 @define-color accent_color {{colors.on_primary.light.rgb}};
-@define-color accent_bg_color @define-color accent_bg_color rgb(70, 93, 145);
+@define-color accent_bg_color rgb(70, 93, 145);
 @define-color accent_fg_color {{colors.primary_container.light.rgb}};
 @define-color destructive_color rgb(238, 153, 160);
 @define-color destructive_bg_color rgb(237, 135, 150);
