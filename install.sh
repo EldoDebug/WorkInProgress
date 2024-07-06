@@ -23,7 +23,7 @@ fi
 
 echo "Downloading the required package..."
 
-yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk \
+yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
     xdg-desktop-portal-hyprland gnome-control-center polkit-gnome \
     gnome-keyring \
     ffmpeg resources swww matugen-bin adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
