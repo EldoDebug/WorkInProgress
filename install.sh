@@ -21,9 +21,6 @@ if ! command -v yay >/dev/null 2>&1;then
     rm -rf yay-bin
 fi
 
-echo "Installing vscode transparent (It will take lot time)"
-yay -S --noconfirm code-translucent
-
 echo "Downloading the required package..."
 
 yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
@@ -34,7 +31,8 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-d
     bc hyprlock cliphist fish fastfetch python-pywal \
     nautilus nautilus-open-any-terminal vesktop-bin \
     alacritty nano \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git
+    noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git \
+    visual-studio-code-bin firefox
 
 echo "Copying .config folder..."
 cp -R .config ~/
