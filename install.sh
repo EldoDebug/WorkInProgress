@@ -21,6 +21,9 @@ if ! command -v yay >/dev/null 2>&1;then
     rm -rf yay-bin
 fi
 
+echo "Installing vscode transparent (It will take lot time)"
+yay -S --noconfirm code-translucent
+
 echo "Downloading the required package..."
 
 yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
@@ -36,26 +39,14 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-d
 echo "Copying .config folder..."
 cp -R .config ~/
 
-read -n1 -rep "Do you want to install sddm? (y/n)" SDDM
-if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
-    yay -S --noconfirm sddm
-    systemctl enable sddm.service 
-
-    read -n1 -rep "Do you want to make it AutoLogin?" AUTOLOGIN 
-    if [[ $AUTOLOGIN == "Y" || $AUTOLOGIN == "y" ]]; then
-        sudo mkdir /etc/sddm.conf.d
-        sudo echo "[Autologin]" > /etc/sddm.conf.d/autologin.conf
-        sudo echo "User="$USERNAME >> /etc/sddm.conf.d/autologin.conf
-        sudo echo "Session=hyprland" >> /etc/sddm.conf.d/autologin.conf
-    fi   
-fi
-
-echo "Do you want to install a transparent vscode?"
-read -n1 -rep "*Installation will take some time (y/n)" CODE
-
-if [[ $CODE == "Y" || $CODE == "y" ]]; then
-    yay -S --noconfirm code-translucent
-fi
+echo "Installing sddm..."
+yay -S --noconfirm sddm
+systemctl enable sddm.service 
+sudo mkdir /etc/sddm.conf.d
+echo "[Autologin]" > ./autologin.conf
+echo "User="$USERNAME >> ./autologin.conf
+echo "Session=hyprland" >> ./autologin.conf
+sudo mv ./autologin.conf /etc/sddm.conf.d/autologin.conf
 
 echo "Running required commands after installation"
 # Set default terminal to alacritty
