@@ -31,7 +31,7 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-d
     bc hyprlock cliphist fish fastfetch python-pywal \
     nautilus nautilus-open-any-terminal vesktop-bin \
     alacritty nano \
-    noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git \
+    noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git ttf-roboto \
     visual-studio-code-bin firefox
 
 echo "Copying .config folder..."
@@ -49,6 +49,8 @@ sudo mv ./autologin.conf /etc/sddm.conf.d/autologin.conf
 echo "Running required commands after installation"
 # Set default terminal to alacritty
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
+# Apc Customize UI++
+sudo chown -R $(whoami) /opt/visual-studio-code
 
 echo "Successful installation!"
 echo "You need to reboot your system"
