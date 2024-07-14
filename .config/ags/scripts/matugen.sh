@@ -32,15 +32,15 @@ switch() {
 cd "$(xdg-user-dir PICTURES)" || return 1
 	switch "$(yad --width 1200 --height 800 --file --add-preview --large-preview --title='Choose wallpaper')"
 
+# Set gtk theme
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 # Restart ags
 $(ags -q; ags)
 
 # Kill Nutilus
 $(nautilus -q)
-
-# Set gtk theme
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 # Move Wallpaper
 wallpaper=$(swww query | awk -F "image: " '{print $2}')
