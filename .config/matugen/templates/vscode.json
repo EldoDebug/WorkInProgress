@@ -1,7 +1,7 @@
 {
     "workbench.colorCustomizations": {
         "activityBar.background": "{{colors.primary.light.hex}}99",
-        "editor.background": "#00000000",
+        "editor.background": "{{colors.primary.light.hex}}10",
         "editorWidget.background": "{{colors.primary.light.hex}}99",
         "editor.selectionBackground": "{{colors.primary_container.light.hex}}4d",
         "editor.lineHighlightBorder": "{{colors.primary_container.light.hex}}4d",
@@ -10,6 +10,7 @@
         "statusBarItem.remoteBackground": "{{colors.primary.light.hex}}",
         "statusBar.background": "{{colors.primary.light.hex}}99",
         "titleBar.activeBackground": "{{colors.primary.light.hex}}99",
+        "titleBar.inactiveBackground": "{{colors.primary.light.hex}}99",
         "sideBarSectionHeader.background": "{{colors.primary.light.hex}}4d",
         "sideBarSectionHeader.border": "{{colors.primary.light.hex}}4d",
         "sideBar.background": "{{colors.primary.light.hex}}4d",
@@ -28,5 +29,10 @@
         "list.hoverBackground": "{{colors.secondary.light.hex}}99",
         "list.inactiveSelectionBackground": "{{colors.primary_container.light.hex}}4d",
         "window.background": "#00000000"
+    },
+    "apc.electron": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "frame": false,
+        "transparent": true
     }
 }

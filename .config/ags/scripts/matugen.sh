@@ -17,8 +17,8 @@ switch() {
 	$(matugen -j strip image "$imgpath")
 	
 	# Appy vscode
-	$(cp ~/'.config/Code - OSS/User/settings.json' ~/'.cache/voidarium/vscode-settings.json')
-	$(jq -s '.[0]* .[1]' ~/'.cache/voidarium/vscode-settings.json' ~/'.cache/voidarium/vscode.json' > ~/'.config/Code - OSS/User/settings.json')
+	$(cp ~/'.config/Code/User/settings.json' ~/'.cache/voidarium/vscode-settings.json')
+	$(jq -s '.[0]* .[1]' ~/'.cache/voidarium/vscode-settings.json' ~/'.cache/voidarium/vscode.json' > ~/'.config/Code/User/settings.json')
 
 	# Apply wal
 	$(wal -i "$imgpath")
@@ -39,7 +39,6 @@ $(ags -q; ags)
 $(nautilus -q)
 
 # Set gtk theme
-gsettings set org.gnome.desktop.interface gtk-theme ''
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
