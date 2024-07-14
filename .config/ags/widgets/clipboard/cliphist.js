@@ -3,12 +3,20 @@ import popupwindow from '../misc/popupwindow.js';
 
 export const WINDOW_NAME = "cliphist";
 
+function createClipObject(id, title) {
+    return {
+        id: id,
+        title: title.trim()
+    }
+}
+
 const clips = () => {
     try {
-        const clipList = Utils.exec(
-            'bash -c "cliphist list | awk \'{$1=\\\"\\\"; print}\'"'
-        )
-        return clipList.split("\n");
+
+        const clipId = Utils.exec('bash -c "cliphist list | awk \'{print $1}\'"').split("\n");
+        const clipTitle = Utils.exec('bash -c "cliphist list | awk \'{$1=\\\"\\\"; print}\'"').split("\n");
+        
+        return clipId.map((id, index) => createClipObject(id, clipTitle[index]));
     } catch (err) {
         return [];
     }
@@ -18,14 +26,14 @@ const clipItem = (clip) => Widget.Button({
     class_name: "clip-item",
     on_clicked: () => {
         App.closeWindow(WINDOW_NAME);
-        Utils.execAsync(`wl-copy ${clip}`);
+        Utils.execAsync('bash -c "' + 'cliphist decode ' + clip.id + ' | wl-copy"');
     },
     attribute: { clip },
     child: Widget.Box({
         children: [
             Widget.Label({
                 class_name: "clip-title",
-                label: clip,
+                label: clip.title,
                 vpack: "center",
                 truncate: "end",
             })
