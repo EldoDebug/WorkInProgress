@@ -32,7 +32,7 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-d
     nautilus nautilus-open-any-terminal vesktop-bin \
     alacritty nano \
     noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git ttf-roboto \
-    visual-studio-code-bin firefox
+    visual-studio-code-bin firefox spotify-adblock spicetify-cli
 
 echo "Copying .config folder..."
 cp -R .config ~/
@@ -47,6 +47,14 @@ echo "Session=hyprland" >> ./autologin.conf
 sudo mv ./autologin.conf /etc/sddm.conf.d/autologin.conf
 
 echo "Running required commands after installation"
+
+# Set Spotify Theme
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+spicetify config current_theme Dribbblish color_scheme gruvbox-material-dark
+spicetify config inject_css 0 replace_colors 1 overwrite_assets 1 inject_theme_js 1
+spicetify backup apply
+
 # Set default terminal to alacritty
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 
