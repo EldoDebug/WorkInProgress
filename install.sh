@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "Welcome to Voidarium Installer"
+echo "Welcome to EldoDebug's Gruvbox-Material Theme Installer"
 
 USERNAME=$(whoami)
 
@@ -26,7 +26,7 @@ echo "Downloading the required package..."
 yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
     xdg-desktop-portal-hyprland gnome-control-center polkit-gnome \
     gnome-keyring \
-    ffmpeg resources swww matugen-bin adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
+    ffmpeg resources swww adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
     jq grim slurp wl-clipboard libnotify hyprpicker dart-sass yad \
     bc hyprlock cliphist fish fastfetch python-pywal \
     nautilus nautilus-open-any-terminal vesktop-bin \
@@ -49,8 +49,6 @@ sudo mv ./autologin.conf /etc/sddm.conf.d/autologin.conf
 echo "Running required commands after installation"
 # Set default terminal to alacritty
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
-# Apc Customize UI++
-sudo chown -R $(whoami) /opt/visual-studio-code
 
 echo "Successful installation!"
 echo "You need to reboot your system"

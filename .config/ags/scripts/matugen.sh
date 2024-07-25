@@ -12,16 +12,9 @@ switch() {
 		echo 'Aborted'
 		exit 0
 	fi
-
-	# Generate Color
-	$(matugen -j strip image "$imgpath")
 	
-	# Appy vscode
-	$(cp ~/'.config/Code/User/settings.json' ~/'.cache/voidarium/vscode-settings.json')
-	$(jq -s '.[0]* .[1]' ~/'.cache/voidarium/vscode-settings.json' ~/'.cache/voidarium/vscode.json' > ~/'.config/Code/User/settings.json')
-
 	# Apply wal
-	$(wal -i "$imgpath")
+	$(wal --theme base16-gruvbox-medium)
 
 	# Change Wallpaper
 	swww img "$imgpath" --transition-step 100 --transition-fps 240 \

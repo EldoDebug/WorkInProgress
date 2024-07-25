@@ -17,9 +17,21 @@
         font-weight: bold;
     }
 
+    .bar-contents-start {
+        padding-left: 12px;
+    }
+
+    .bar-contents-end {
+        padding-right: 12px;
+    }
+
     .bar-distro-icon {
         color: $primary_container;
     }
+}
+
+.bar-icon {
+    font-family: "Material Symbols Rounded";
 }
 
 .workspace {

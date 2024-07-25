@@ -4,7 +4,7 @@ import { getDistroIcon } from "../../utils/system.js";
 import systray from "./contents/systray.js";
 
 const startContent = () => Widget.Box({
-    class_name: "bar-contents",
+    class_names: ["bar-contents", "bar-contents-start"],
     spacing: 8,
     vertical: false,
     children: [
@@ -27,12 +27,20 @@ const centerContent = () => Widget.Box({
 })
 
 const endContent = () => Widget.Box({
-    class_name: "bar-contents",
+    class_names: ["bar-contents", "bar-contents-end"],
     spacing: 8,
     hpack: "end",
     vertical: false,
     children: [
         systray(),
+        Widget.Button({
+            class_name: "bar-menu",
+            cursor: "pointer",
+            child: Widget.Label({
+                class_name: "bar-icon",
+                label: "power_settings_new"
+            })
+        })
     ]
 })
 

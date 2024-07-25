@@ -14,9 +14,13 @@ function forMonitors(widget) {
     return range(n, 0).map(widget).flat(1);
 }
 
+function forMonitorsAsync(widget) {
+    const n = Gdk.Display.get_default()?.get_n_monitors() || 1;
+    return range(n, 0).forEach((n) => widget(n));
+}
+
 const Windows = () => [
     applauncher(),
-    forMonitors(bar),
     cliphist()
 ]
 
@@ -42,3 +46,5 @@ App.config({
     closeWindowDelay: closeWindowDelays,
     windows: Windows().flat(1),
 });
+
+forMonitorsAsync(bar);
