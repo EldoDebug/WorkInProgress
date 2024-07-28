@@ -32,7 +32,7 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-d
     nautilus nautilus-open-any-terminal vesktop-bin \
     alacritty nano \
     noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git ttf-roboto \
-    visual-studio-code-bin firefox spotify-adblock spicetify-cli fcitx5-gruvbox-dark-theme-git
+    visual-studio-code-bin firefox spotify-adblock spicetify-cli fcitx5-gruvbox-dark-theme-git nautilus-admin-gtk4
 
 echo "Copying .config folder..."
 cp -R .config ~/
