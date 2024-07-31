@@ -1,5 +1,5 @@
 .applauncher {
-    background-color: $blur;
+    background-color: $bg_0;
     border-radius: 16px;
 }
 
@@ -9,7 +9,7 @@
 
 .app-title {
     margin-left: 8px;
-    color: $on_primary;
+    color: $bg_5;
 }
 
 .app-list {
@@ -17,8 +17,8 @@
 }
 
 .app-entry-box {
-    background-color: transparentize($color: $primary_container, $amount: 0.4);
-    color: $on_primary;
+    //background-color: transparentize($color: $primary_container, $amount: 0.4);
+    //color: $on_primary;
     border-radius: 12px;
     margin: 8px 8px 0px 8px;
 }
