@@ -6,7 +6,6 @@ import * as Utils from 'resource:///com/github/Aylur/ags/utils.js'
 import applauncher from './widgets/applauncher/applauncher.js';
 import bar from './widgets/bar/bar.js';
 import cliphist from './widgets/clipboard/cliphist.js';
-import { barCornerTopLeft, barCornerTopRight } from './widgets/bar/bar.js';
 
 const range = (length, start = 1) => Array.from({ length }, (_, i) => i + start);
 
@@ -15,16 +14,10 @@ function forMonitors(widget) {
     return range(n, 0).map(widget).flat(1);
 }
 
-function forMonitorsAsync(widget) {
-    const n = Gdk.Display.get_default()?.get_n_monitors() || 1;
-    return range(n, 0).forEach((n) => widget(n));
-}
-
 const Windows = () => [
     applauncher(),
-    cliphist(),
-    forMonitors(barCornerTopLeft),
-    forMonitors(barCornerTopRight)
+    forMonitors(bar),
+    cliphist()
 ]
 
 const CLOSE_ANIM_TIME = 210;
@@ -49,5 +42,3 @@ App.config({
     closeWindowDelay: closeWindowDelays,
     windows: Windows().flat(1),
 });
-
-forMonitorsAsync(bar);

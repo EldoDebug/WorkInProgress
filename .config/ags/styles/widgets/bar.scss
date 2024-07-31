@@ -1,41 +1,25 @@
 .bar {
-    background-color: $bg_0;
+    background-color: $blur;
+    border-radius: 16px;
 
     .bar-contents-date {
         margin: 8px;
-        color: $fg_0;
+        color: $on_primary;
         font-size: 16px;
         border-radius: 12px;
         font-weight: bold;
     }
 
     .bar-contents {
-        color: $fg_0;
+        color: $on_primary;
         font-size: 16px;
         border-radius: 12px;
         font-weight: bold;
     }
 
-    .bar-contents-start {
-        padding-left: 8px;
-    }
-
-    .bar-contents-end {
-        padding-right: 8px;
-    }
-
     .bar-distro-icon {
-        color: $blue;
+        color: $primary_container;
     }
-}
-
-.bar-corner {
-    background-color: $bg_0;
-    border-radius: 26px;
-}
-
-.bar-icon {
-    font-family: "Material Symbols Rounded";
 }
 
 .workspace {
@@ -50,7 +34,7 @@
     }
 
     .workspace-fill {
-        background: $bg_5;
+        background: $outline;
         padding: 4px;
         margin: 2px;
         transition: all 300ms $standard;
@@ -64,7 +48,7 @@
             padding-right: 6px;
             padding-top: 6px;
             padding-bottom: 6px;
-            background: $aqua;
+            background: $primary_container;
         }
     }
 

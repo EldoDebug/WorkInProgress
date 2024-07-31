@@ -1,0 +1,34 @@
+[templates.ags]
+input_path = '~/.config/matugen/templates/ags.scss'
+output_path = '~/.config/ags/styles/colors.scss'
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprlock.conf'
+output_path = '~/.config/hypr/hyprlock.conf'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/voidarium.theme.css'
+output_path = '~/.config/vesktop/themes/voidarium.theme.css'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
+[templates.vscode]
+input_path = '~/.config/matugen/templates/vscode.json'
+output_path = '~/.cache/voidarium/vscode.json'
+
+[config]
+reload_apps = true
+set_wallpaper = false
+
+[config.reload_apps_list]
+gtk_theme = true
