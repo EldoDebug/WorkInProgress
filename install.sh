@@ -49,14 +49,21 @@ sudo mv ./autologin.conf /etc/sddm.conf.d/autologin.conf
 echo "Running required commands after installation"
 
 # Set Spotify Theme
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
-spicetify config current_theme Dribbblish color_scheme gruvbox-material-dark
-spicetify config inject_css 0 replace_colors 1 overwrite_assets 1 inject_theme_js 1
-spicetify backup apply
+#sudo chmod a+wr /opt/spotify
+#sudo chmod a+wr /opt/spotify/Apps -R
+#spicetify config current_theme Dribbblish color_scheme gruvbox-material-dark
+#spicetify config inject_css 0 replace_colors 1 overwrite_assets 1 inject_theme_js 1
+#spicetify backup apply
 
 # Set default terminal to alacritty
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
+
+# Install vscode theme
+code --install-extension sainnhe.gruvbox-material
+code --install-extension JonathanHarty.gruvbox-material-icon-theme
+
+# Apply theme
+$(~/.config/ags/scripts/theme.sh dark)
 
 echo "Successful installation!"
 echo "You need to reboot your system"

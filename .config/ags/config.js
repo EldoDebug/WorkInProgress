@@ -6,6 +6,7 @@ import * as Utils from 'resource:///com/github/Aylur/ags/utils.js'
 import applauncher from './widgets/applauncher/applauncher.js';
 import bar from './widgets/bar/bar.js';
 import cliphist from './widgets/clipboard/cliphist.js';
+import { barCornerTopLeft, barCornerTopRight } from './widgets/bar/bar.js';
 
 const range = (length, start = 1) => Array.from({ length }, (_, i) => i + start);
 
@@ -21,7 +22,9 @@ function forMonitorsAsync(widget) {
 
 const Windows = () => [
     applauncher(),
-    cliphist()
+    cliphist(),
+    forMonitors(barCornerTopLeft),
+    forMonitors(barCornerTopRight)
 ]
 
 const CLOSE_ANIM_TIME = 210;
