@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "Welcome to Voidarium Installer"
+echo "Welcome to Installer"
 
 USERNAME=$(whoami)
 
@@ -28,7 +28,7 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-d
     gnome-keyring \
     ffmpeg resources swww matugen-bin adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
     jq grim slurp wl-clipboard libnotify hyprpicker dart-sass yad \
-    bc hyprlock cliphist fish fastfetch python-pywal \
+    hyprlock cliphist fish fastfetch \
     nautilus nautilus-open-any-terminal vesktop-bin \
     alacritty nano \
     noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git ttf-roboto \
@@ -45,12 +45,6 @@ echo "[Autologin]" > ./autologin.conf
 echo "User="$USERNAME >> ./autologin.conf
 echo "Session=hyprland" >> ./autologin.conf
 sudo mv ./autologin.conf /etc/sddm.conf.d/autologin.conf
-
-echo "Running required commands after installation"
-# Set default terminal to alacritty
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
-# Apc Customize UI++
-sudo chown -R $(whoami) /opt/visual-studio-code
 
 echo "Successful installation!"
 echo "You need to reboot your system"
