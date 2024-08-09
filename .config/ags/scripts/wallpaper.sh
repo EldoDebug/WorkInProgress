@@ -13,36 +13,16 @@ switch() {
 		exit 0
 	fi
 
-	# Generate Color
-	$(matugen -j strip image "$imgpath")
-	
-	# Appy vscode
-	$(cp ~/'.config/Code/User/settings.json' ~/'.cache/voidarium/vscode-settings.json')
-	$(jq -s '.[0]* .[1]' ~/'.cache/voidarium/vscode-settings.json' ~/'.cache/voidarium/vscode.json' > ~/'.config/Code/User/settings.json')
-
-	# Apply wal
-	$(wal -i "$imgpath")
-
 	# Change Wallpaper
 	swww img "$imgpath" --transition-step 100 --transition-fps 240 \
 		--transition-type grow --transition-angle 30 --transition-duration 1 \
 		--transition-pos "$cursorposx, $cursorposy_inverted"
+
+	# Move Wallpaper
+	wallpaper=$(swww query | awk -F "image: " '{print $2}')
+	destination=~/.cache/hyprlock.png
+	ffmpeg -y -v 0 -i $wallpaper $destination
 }
 
 cd "$(xdg-user-dir PICTURES)" || return 1
 	switch "$(yad --width 1200 --height 800 --file --add-preview --large-preview --title='Choose wallpaper')"
-
-# Set gtk theme
-gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-
-# Restart ags
-$(ags -q; ags)
-
-# Kill Nutilus
-$(nautilus -q)
-
-# Move Wallpaper
-wallpaper=$(swww query | awk -F "image: " '{print $2}')
-destination=~/.cache/voidarium/hyprlock.png
-ffmpeg -y -v 0 -i $wallpaper $destination
