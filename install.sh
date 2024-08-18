@@ -23,7 +23,7 @@ fi
 
 echo "Downloading the required package..."
 
-yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
+yay -S --noconfirm hyprland hyprlock xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
     xdg-desktop-portal-hyprland gnome-control-center polkit-gnome \
     gnome-keyring \
     ffmpeg resources swww adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
@@ -32,7 +32,7 @@ yay -S --noconfirm hyprland xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-d
     nautilus nautilus-open-any-terminal vesktop-bin \
     alacritty nano \
     noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git ttf-roboto \
-    visual-studio-code-bin firefox spotify-adblock spicetify-cli fcitx5-gruvbox-dark-theme-git nautilus-admin-gtk4
+    visual-studio-code-bin firefox spotify-adblock spicetify-cli
 
 echo "Copying .config folder..."
 cp -R .config ~/
@@ -59,8 +59,8 @@ echo "Running required commands after installation"
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 
 # Install vscode theme
-code --install-extension sainnhe.gruvbox-material
-code --install-extension JonathanHarty.gruvbox-material-icon-theme
+#code --install-extension sainnhe.gruvbox-material
+#code --install-extension JonathanHarty.gruvbox-material-icon-theme
 
 # Apply theme
 $(~/.config/ags/scripts/theme.sh dark)
