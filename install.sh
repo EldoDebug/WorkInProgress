@@ -25,7 +25,7 @@ echo "Downloading the required package..."
 
 yay -S --noconfirm hyprland hyprlock xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
     xdg-desktop-portal-hyprland gnome-control-center polkit-gnome \
-    gnome-keyring \
+    gnome-keyring gradience \
     ffmpeg resources swww adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
     jq grim slurp wl-clipboard libnotify hyprpicker dart-sass yad \
     bc cliphist fish fastfetch \
@@ -59,5 +59,15 @@ echo "Running required commands after installation"
 # Set default terminal to alacritty
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
 
+<<<<<<< HEAD
+=======
+# Install vscode theme
+code --install-extension sainnhe.gruvbox-material
+code --install-extension JonathanHarty.gruvbox-material-icon-theme
+
+# Apply theme
+$(~/.config/ags/scripts/theme.sh dark)
+
+>>>>>>> 4dd81d52c69f016376b3b439bfd980f8d6e1f2b3
 echo "Successful installation!"
 echo "You need to reboot your system"
