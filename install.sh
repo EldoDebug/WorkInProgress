@@ -28,11 +28,12 @@ yay -S --noconfirm hyprland hyprlock xdg-desktop-portal xdg-desktop-portal-gtk x
     gnome-keyring \
     ffmpeg resources swww adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
     jq grim slurp wl-clipboard libnotify hyprpicker dart-sass yad \
-    bc cliphist fish fastfetch python-pywal \
+    bc cliphist fish fastfetch \
     nautilus nautilus-open-any-terminal vesktop-bin \
     alacritty nano \
     noto-fonts noto-fonts-cjk noto-fonts-emoji consolas-font ttf-material-symbols-variable-git ttf-roboto \
-    visual-studio-code-bin firefox spotify-adblock spicetify-cli
+    visual-studio-code-bin firefox spotify-adblock spicetify-cli \
+    python-pywal python-materialyoucolor-git
 
 echo "Copying .config folder..."
 cp -R .config ~/
@@ -57,13 +58,6 @@ echo "Running required commands after installation"
 
 # Set default terminal to alacritty
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
-
-# Install vscode theme
-#code --install-extension sainnhe.gruvbox-material
-#code --install-extension JonathanHarty.gruvbox-material-icon-theme
-
-# Apply theme
-$(~/.config/ags/scripts/theme.sh dark)
 
 echo "Successful installation!"
 echo "You need to reboot your system"
