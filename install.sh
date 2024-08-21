@@ -25,7 +25,7 @@ echo "Downloading the required package..."
 
 yay -S --noconfirm hyprland hyprlock xdg-desktop-portal xdg-desktop-portal-gtk xdg-user-dirs \
     xdg-desktop-portal-hyprland gnome-control-center polkit-gnome \
-    gnome-keyring gradience \
+    gnome-keyring \
     ffmpeg resources swww adw-gtk3 aylurs-gtk-shell libdbusmenu-gtk3 \
     jq grim slurp wl-clipboard libnotify hyprpicker dart-sass yad \
     bc cliphist fish fastfetch \
